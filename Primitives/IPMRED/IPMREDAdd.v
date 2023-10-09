@@ -40,32 +40,32 @@ module IPMREDAdd #(parameter v = 8) (
 		);
 
 	IPSquare #(.v(v-1)) l3 ( // x^2
-			.R(z1), // input [v*4 - 1 : 0] R,
-			.L(L1_star), //input [v*4 - 1 : 0] Q,
-			.T(line3) // output [v*4 - 1 : 0] T
+			.R(z1), 
+			.L(L1_star), 
+			.T(line3) 
 		);
 
 	IPMult #(.v(v-1)) l4 ( // x^2 * x'
-			.rand(rand[1*((v-1)*(v-1)*8) - 2 : 0*((v-1)*(v-1)*8)]), // input [(v*v*4) - 2 : 0] rand,
-			.R(line3), // input [v*4 - 1 : 0] R,
-			.Q(z1_), //input [v*4 - 1 : 0] Q,
-			.L_hat(L1_hat), // input [(v*v*4)-1 : 0] L_hat,
-			.T(line4) // output [v*4 - 1 : 0] T
+			.rand(rand[1*((v-1)*(v-1)*8) - 2 : 0*((v-1)*(v-1)*8)]), 
+			.R(line3), 
+			.Q(z1_), 
+			.L_hat(L1_hat), 
+			.T(line4) 
 		);
 
 
 	IPSquare #(.v(v-1)) l5 ( // (x')^2
-			.R(z1_), // input [v*4 - 1 : 0] R,
-			.L(L1_star), // input [(v*v*4)-1 : 0] L_hat,
-			.T(line5) // output [v*4 - 1 : 0] T
+			.R(z1_), 
+			.L(L1_star), 
+			.T(line5) 
 		);
 
 	IPMult #(.v(v-1)) l6 ( // (x')^2 * x
-			.rand(rand[2*((v-1)*(v-1)*8) - 2 : 1*((v-1)*(v-1)*8)]), // input [(v*v*4) - 2 : 0] rand,
-			.R(line5), // input [v*4 - 1 : 0] R,
-			.Q(z1), //input [v*4 - 1 : 0] Q,
-			.L_hat(L1_hat), // input [(v*v*4)-1 : 0] L_hat,
-			.T(line6) // output [v*4 - 1 : 0] T
+			.rand(rand[2*((v-1)*(v-1)*8) - 2 : 1*((v-1)*(v-1)*8)]), 
+			.R(line5), 
+			.Q(z1), 
+			.L_hat(L1_hat), 
+			.T(line6) 
 		);
 
 	IPAdd #(.v(v-1)) l7 ( // (x')^2 * x + x^2 * x'
@@ -83,10 +83,10 @@ module IPMREDAdd #(parameter v = 8) (
 		);
 
 	Homogenization #(.v(v)) l10 (
-			.L2(L2), // input [v*4-1:0] L2,
-			.a(line1), // input [v*4 - 1: 0] a, // a = t
-			.b(line9), // input [v*4 - 1: 0] b, // b = u
-			.c(P) // output [v*4 - 1: 0] c
+			.L2(L2), 
+			.a(line1),
+			.b(line9),
+			.c(P) 
 		);
 
 endmodule

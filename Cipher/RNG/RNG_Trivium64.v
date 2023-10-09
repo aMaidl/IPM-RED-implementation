@@ -11,7 +11,6 @@ module RNG_Trivium64 #(parameter instances = 5, parameter npad = 3) (
     input clk,
     input enable,
     input reseed,
-    //input [instances*80-1:0] IV,
     input [instances*80-1:0] seed,
     output isReady,
 	output [instances*64-1:0] random

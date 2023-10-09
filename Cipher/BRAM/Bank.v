@@ -498,60 +498,6 @@ module Bank #(parameter addr_bits = 6, parameter debug = 0) (
                  : (sq_r_BRAM == BRAM_sq) ? sq_val_w
                  : 32'h0);
 
-            if (debug) begin
-
-                if (last_add0_r_BRAM != BRAM_DEFAULT) begin
-                    $display("add0 deliver(%d): val =%h, BRAM=%h", DEBUG_STATE, add0_out, last_add0_r_BRAM);
-                end
-                if (last_add1_r_BRAM != BRAM_DEFAULT) begin
-                    $display("add1 deliver(%d): val =%h, BRAM=%h", DEBUG_STATE, add1_out, last_add1_r_BRAM);
-                end
-                if (last_mul0_r_BRAM != BRAM_DEFAULT) begin
-                    $display("mul0 deliver(%d): val =%h, BRAM=%h", DEBUG_STATE, mul0_out, last_mul0_r_BRAM);
-                end
-                if (last_mul1_r_BRAM != BRAM_DEFAULT) begin
-                    $display("mul1 deliver(%d): val =%h, BRAM=%h", DEBUG_STATE, mul1_out, last_mul1_r_BRAM);
-                end
-                if (last_mc_r_BRAM != BRAM_DEFAULT) begin
-                    $display("mc deliver  (%d): val =%h, BRAM=%h", DEBUG_STATE, mc_out, last_mc_r_BRAM);
-                end
-                if (last_sq_r_BRAM != BRAM_DEFAULT) begin
-                    $display("sq deliver  (%d): val =%h, BRAM=%h", DEBUG_STATE, sq_out, last_sq_r_BRAM);
-                    $display("\tsq_pass = %b\n\tsq_needs_pass = %b", sq_pass, sq_needs_pass);
-                end
-                if (add_en) begin
-                    $display("add write   (%d): addr=%h, val=%h", DEBUG_STATE, add_addr_w, add_val_w);
-                end
-                if (mul_en) begin
-                    $display("mul write   (%d): addr=%h, val=%h", DEBUG_STATE, mul_addr_w, mul_val_w);
-                end
-                if (sq_en) begin
-                    $display("sq write    (%d): addr=%h, val=%h", DEBUG_STATE, sq_addr_w, sq_val_w);
-                end
-                if (mc_en) begin
-                    $display("mc write    (%d): addr=%h, val=%h", DEBUG_STATE, mc_addr_w, mc_val_w);
-                end
-                if (add0_r_BRAM != BRAM_DEFAULT) begin
-                    $display("add0 request(%d): addr=%h, BRAM=%h", DEBUG_STATE, add0_addr_r, add0_r_BRAM);
-                end
-                if (add1_r_BRAM != BRAM_DEFAULT) begin
-                    $display("add1 request(%d): addr=%h, BRAM=%h", DEBUG_STATE, add1_addr_r, add1_r_BRAM);
-                end
-                if (mul0_r_BRAM != BRAM_DEFAULT) begin
-                    $display("mul0 request(%d): addr=%h, BRAM=%h", DEBUG_STATE, mul0_addr_r, mul0_r_BRAM);
-                end
-                if (mul1_r_BRAM != BRAM_DEFAULT) begin
-                    $display("mul1 request(%d): addr=%h, BRAM=%h", DEBUG_STATE, mul1_addr_r, mul1_r_BRAM);
-                end
-                if (mc_r_BRAM != BRAM_DEFAULT) begin
-                    $display("mc request  (%d): addr=%h, BRAM=%h", DEBUG_STATE, mc_addr_r, mc_r_BRAM);
-                end
-                if (sq_r_BRAM != BRAM_DEFAULT) begin
-                    $display("sq request  (%d): addr=%h, BRAM=%h", DEBUG_STATE, sq_addr_r, sq_r_BRAM);
-                end
-
-            end
-
         end
      end
 

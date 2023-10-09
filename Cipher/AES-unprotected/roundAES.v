@@ -191,21 +191,6 @@ module roundAES (
                 state <= 10'b1111111111;
 					 is_busy <= 1;
             end else begin
-                $display("=====================");
-                $display("state       = %b (%d)", state, state);
-                $display("round_count = %d", round_count);
-                $display("rpt        = %h", round_pt);
-                $display("round_ks   = %h", round_ks);
-                //$display("r1          = %h", Mult_rand);
-                //$display("r2          = %h", Add_rand);
-                //$display("r3          = %h", Mask_rand);
-                /*
-                $display("(%d) +  um = %h", state, add_um);
-                $display("(%d) *  um = %h", state, mul_um);
-                $display("(%d) mc um = %h", state, mc_um);
-                $display("(%d) sq um = %h", state, sq_um);
-                */
-
 
 
                 // these are important!!!

@@ -219,27 +219,9 @@ module roundAES #(parameter v = 4) (
 		else begin
             if(!en) begin
                 state <= 10'b1111111111;
-					 is_busy <= 1;
+				is_busy <= 1;
             end else begin
-                $display("=====================");
-                $display("state       = %b (%d)", state, state);
-                $display("round_count = %d", round_count);
-                //$display("L1          = %h" , L1);
-                //$display("L2          = %h" , L2);
-                //$display("L1_hat      = %h" , L1_hat);
-                //$display("L2_hat      = %h" , L2_hat);
-                //$display("rpt         = %h", round_pt);
-                //$display("round_ks    = %h", round_ks);
-                //$display("r1          = %h", IPMREDMult_rand);
-                //$display("r2          = %h", IPMREDAdd_rand);
-                //$display("r3          = %h", IPMREDMask_rand);
-                /*
-                $display("(%d) +  um = %h", state, add_um);
-                $display("(%d) *  um = %h", state, mul_um);
-                $display("(%d) mc um = %h", state, mc_um);
-                $display("(%d) sq um = %h", state, sq_um);
-                */
-
+                
 
 
                 // these are important!!!

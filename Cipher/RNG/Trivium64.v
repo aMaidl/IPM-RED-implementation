@@ -35,31 +35,10 @@ module Trivium64 (
 
     integer i;
 	always @ (posedge clk) begin
-	    // $display("IV = %h", IV);
 	    if (reseed == 1) begin
             state <= {3'b111,108'b0,4'b0,IV,13'b0,seed};
             initCounter <= 11'b0;
         end else if (enable == 1) begin
-            /*
-            $display("");
-            $display("state = %h", state);
-            $display("s10   = %b", state[9:0]);
-            $display("count = %d", initCounter);
-            $display("t1    = %h", t1);
-            $display("t1_10 = %b", t1[9:0]);
-            $display("t2    = %h", t2);
-            $display("t2_10 = %b", t2[9:0]);
-            $display("t3    = %h", t3);
-            $display("t3_10 = %b", t3[9:0]);
-
-            $display("a     = %h", state[92:0]);
-            $display("a_    = %h", {state[28:0], t3});
-            $display("b     = %h", state[176:93]);
-            $display("b_    = %h", {state[112:93], t1});
-            $display("c     = %h", state[287:177]);
-            $display("c_    = %h", {state[223:177], t2});
-            $display("k     = %h", {state[223:177], t2,state[112:93], t1,state[28:0], t3});
-            */
             state[92:0] <= {state[28:0], t3};
             state[176:93] <= {state[112:93], t1};
             state[287:177] <= {state[223:177], t2};

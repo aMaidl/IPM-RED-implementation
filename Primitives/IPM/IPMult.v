@@ -42,9 +42,6 @@ module IPMult #(parameter v = 8) (
 	assign delta[7:0] = 8'b0;
 	wire [v*v*8-1:0] inner_terms;
 	wire [v*v*8-1:0] inner_sums;
-	// !!!!
-	// i think you can save v gmul8 here by because L_i,j = 1 for at least one term in the sum
-	// !!!!
 	generate
 		for(j = 0; j < v; j = j + 1) begin
 			for(i = 0; i < v; i = i + 1) begin

@@ -4,8 +4,6 @@ module gmul8 (
 	output	[7:0]	xy
 );
 
-   // iverilog -o output -c mult8.txt; echo "done"; vvp output
-
 
     wire [9*32-1:0] res;
     wire [9*32-1:0] roundx;

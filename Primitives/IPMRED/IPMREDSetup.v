@@ -51,26 +51,6 @@ module IPMREDSetup #(parameter v = 8) (
 		end
 	endgenerate
 	
-	/*
-	 * BACKUP, IN CASE WE NEED THE FULL L_HAT AT SOME POINT
-	generate
-		for(i = 0; i < v; i = i + 1) begin
-			for(j = 0; j < v; j = j + 1) begin
-				// 2d access:
-				// A[i, j] = A[(i*v*4 + (j+1)*4)-1 : i*v*4 + j*4]
-				gmul4 gmul1 (
-						.x(L1[((i+1)*4)-1 : i*4]),
-						.y(L1[((j+1)*4)-1 : j*4]),
-						.xy(L1_hat[i*4*v+j*4+3:i*4*v+j*4])
-					);
-				gmul4 gmul2 (
-						.x(L2[((i+1)*4)-1 : i*4]),
-						.y(L2[((j+1)*4)-1 : j*4]),
-						.xy(L2_hat[i*4*v+j*4+3:i*4*v+j*4])
-					);
-			end
-		end
-	endgenerate
-	*/
+	
 	
 endmodule
